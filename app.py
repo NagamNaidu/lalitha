@@ -229,8 +229,7 @@ with tab5:
 # --- SIDEBAR SECTION ---
 st.sidebar.header("Personal Profile")
 # Replace with a placeholder image or remove the image loading
-img = Image.open("C:/Users/chait/OneDrive/Desktop/lalitha mam/lalitha_priya.jpg")
-st.sidebar.image(img, width=150)
+st.sidebar.image("lalitha.jpg", width=200)
 st.sidebar.write(f"**Full Name:** Lalitha Priya")
 st.sidebar.write(f"**Date of Birth:** 11-09-1990")
 st.sidebar.write(f"**Gender:** Female")
