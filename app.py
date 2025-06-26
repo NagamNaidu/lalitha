@@ -5,9 +5,7 @@ from PIL import Image
 PAGE_TITLE = "Digital Resume - Lalitha Priya"
 PAGE_ICON = ":wave:"
 NAME = "Lalitha Priya"
-DESCRIPTION = """
-Dynamic and results-oriented professional with over 10 years of experience in Operations, Training, Data Management, and Project Management.
-"""
+DESCRIPTION = "Operations Manager | Training & Process Excellence | Lean Six Sigma | KPI Optimization | 10+ Years in People & Performance"
 EMAIL = "priyalalitha0911@gmail.com"
 PHONE = "+91-7981276741"
 HYPERLINKS = {
@@ -39,12 +37,10 @@ with st.container():
         """,
         unsafe_allow_html=True,
     )
-    st.markdown('<div class="highlight-card">', unsafe_allow_html=True)
     st.title(NAME)
     st.write(DESCRIPTION)
     st.write(f"📞 {PHONE} | ✉️ {EMAIL}")
     st.write(f"🌐 {LOCATION}")
-    st.markdown('</div>', unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -233,8 +229,8 @@ with tab5:
 # --- SIDEBAR SECTION ---
 st.sidebar.header("Personal Profile")
 # Replace with a placeholder image or remove the image loading
-# img = Image.open("./lalitha_priya.jpg")
-# st.sidebar.image(img, width=150)
+img = Image.open("C:/Users/chait/OneDrive/Desktop/lalitha mam/lalitha_priya.jpg")
+st.sidebar.image(img, width=150)
 st.sidebar.write(f"**Full Name:** Lalitha Priya")
 st.sidebar.write(f"**Date of Birth:** 11-09-1990")
 st.sidebar.write(f"**Gender:** Female")
