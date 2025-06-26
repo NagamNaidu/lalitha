@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Digital Resume - Lalitha Priya"
@@ -268,7 +269,8 @@ with tab5:
 
 # --- SIDEBAR SECTION ---
 st.sidebar.header("Personal Profile")
-st.sidebar.image("https://www.example.com/image.jpg", width=150)  # Placeholder image
+img = Image.open("lalitha_priya.jpg")
+st.sidebar.image(img, width=150)
 st.sidebar.write(f"**Full Name:** Lalitha Priya")
 st.sidebar.write(f"**Date of Birth:** 11-09-1990")
 st.sidebar.write(f"**Gender:** Female")
