@@ -29,7 +29,6 @@ with st.container():
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             color: black; /* Black text */
         }
         .stButton>button {
@@ -233,8 +232,9 @@ with tab5:
 
 # --- SIDEBAR SECTION ---
 st.sidebar.header("Personal Profile")
-img = Image.open("./lalitha_priya.jpg")
-st.sidebar.image(img, width=150)
+# Replace with a placeholder image or remove the image loading
+# img = Image.open("./lalitha_priya.jpg")
+# st.sidebar.image(img, width=150)
 st.sidebar.write(f"**Full Name:** Lalitha Priya")
 st.sidebar.write(f"**Date of Birth:** 11-09-1990")
 st.sidebar.write(f"**Gender:** Female")
