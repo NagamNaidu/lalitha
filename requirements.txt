@@ -2,3 +2,4 @@ streamlit
 pillow
 opencv-python
 streamlit_lottie
+requests

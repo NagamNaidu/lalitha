@@ -12,11 +12,9 @@ EMAIL = "priyalalitha0911@gmail.com"
 PHONE = "+91-7981276741"
 HYPERLINKS = {
     "LinkedIn": "https://www.linkedin.com/",
-    "GitHub": "https://github.com/",
-    "Website": "https://www.example.com/"
-}
+    "GitHub": "https://www.example.com/"
+    }
 LOCATION = "Hyderabad, Telangana, India"
-
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 # --- LOAD CSS ---
@@ -27,20 +25,23 @@ with open("style/style.css") as f:
 with st.sidebar:
     img_width = 150
     img_height = 150
-    st.image("lalitha_priya.jpg", width=img_width, height=img_height, use_column_width=False, output_format="JPEG")
-    st.title(NAME)
-    st.write(DESCRIPTION)
-    st.write(f"📞 {PHONE}")
-    st.write(f"✉️ {EMAIL}")
-    st.write(f"📍 {LOCATION}")
-
-    st.markdown("""
-    [LinkedIn](%s)
-    [GitHub](%s)
-    [Website](%s)
-    """ % (HYPERLINKS.get("LinkedIn", ""), HYPERLINKS.get("GitHub", ""), HYPERLINKS.get("Website", "")))
-    
-st.markdown('<style>img{border-radius: 50%;}</style>', unsafe_allow_html=True)
+    image_path = "lalitha.jpg"
+    import os
+    image_path = os.path.abspath(image_path)
+    try:
+        img = Image.open(image_path)
+        img = img.resize((img_width, img_height))
+        st.image(img, width=img_width, use_container_width=False)
+    except FileNotFoundError:
+        st.error("Failed to load image")
+    except Exception as e:
+        st.error(f"Error: {e}")
+    st.markdown('<style>img{border-radius: 50% !important;}</style>', unsafe_allow_html=True)
+    st.title("Lalitha Priya")
+    st.write("Date of Birth: 11-09-1990")
+    st.write("Religion: Hindu")
+    st.write("Nationality: Indian")
+    st.write("Languages Known: Telugu, Tamil, English and Hindi")
 
 # --- FUNCTION TO LOAD LOTTIE ---
 def load_lottieurl(url):
@@ -54,7 +55,7 @@ lottie_summary = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_w
 lottie_projects = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_vnikrcia.json")
 lottie_experience = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_kkflmtur.json")
 lottie_certifications = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_bhw1ul4g.json")
-lottie_achievements = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_mkcnkspy.json")
+lottie_achievements = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json")
 
 # --- CUSTOM CSS ---
 st.markdown(
@@ -91,11 +92,22 @@ st.markdown(
 # --- HEADER SECTION ---
 with st.container():
     st.markdown("<div class='header-card'>", unsafe_allow_html=True)
+    # --- GENERAL SETTINGS ---
+    PAGE_TITLE = "Digital Resume - Lalitha Priya"
+    PAGE_ICON = ":wave:"
+    NAME = "Lalitha Priya"
+    DESCRIPTION = "Operations Manager | Training & Process Excellence | Lean Six Sigma | KPI Optimization | 10+ Years in People & Performance"
+    EMAIL = "priyalalitha0911@gmail.com"
+    PHONE = "+91-7981276741"
+    HYPERLINKS = {
+        "LinkedIn": "https://www.linkedin.com/",
+        "GitHub": "https://www.example.com/"
+        }
+    LOCATION = "Hyderabad, Telangana, India"
     st.title(NAME)
     st.write(DESCRIPTION)
     st.write(f"📞 {PHONE} | ✉️ {EMAIL}")
     st.write(f"🌐 {LOCATION}")
-
     col1, col2, col3 = st.columns(3)
     with col1:
         if "LinkedIn" in HYPERLINKS:
@@ -106,7 +118,6 @@ with st.container():
     with col3:
         if "Website" in HYPERLINKS:
             st.link_button("Website", HYPERLINKS["Website"])
-
     st.markdown("</div>", unsafe_allow_html=True)
 
 
@@ -236,6 +247,32 @@ with tab3:
         - Analyze various reports to enhance productivity.
         """)
     st.markdown("</div>", unsafe_allow_html=True)
+    with st.expander("Vertex Customer Solutions Pvt ltd - Sr. Team Leader (Jun 2013 - Aug 2014)", expanded=False):
+        st.write("""
+        - Handling a team of 20 associates.
+        - Setting expectations to achieve KPI and productivity targets for the team.
+        - Handling Real Time Q Management to answer maximum numbers of calls and to maintain AHT & ACW.
+        - Analyse various reports to enhance productivity.
+        - Monitoring the performance of the associated on daily basis.
+        - Maintaining reports and giving instant feedback to them to improve the performance.
+        - Escalating the issues to the client and see that the problem is rectified.
+        - Taking Escalations and follow up on the same with the client.
+        - Attending call calibrations with quality and training team internal as well external team.
+        - Product and process training for the NHTs whenever required.
+        """)
+    with st.expander("Digicall Teleservices Pvt ltd - Sr. Team Leader (Mar 2010 - Dec-2012)", expanded=False):
+        st.write("""
+        - Handling a team of 20 associates.
+        - Setting expectations to achieve KPI and productivity targets for the team.
+        - Handling Real Time Q Management to answer maximum numbers of calls and to maintain AHT & ACW.
+        - Analyse various reports to enhance productivity.
+        - Monitoring the performance of the associated on daily basis.
+        - Maintaining reports and giving instant feedback to them to improve the performance.
+        - Escalating the issues to the client and see that the problem is rectified.
+        - Taking Escalations and follow up on the same with the client.
+        - Attending call calibrations with quality and training team internal as well external team.
+        - Product and process training for the NHTs as required.
+        """)
 
 with tab4:
     if lottie_certifications:
@@ -267,6 +304,74 @@ with tab5:
     - Introduced a daily performance dashboard, reducing manual reporting time by 40% and enabling faster data-driven decisions.
     - Played a key role in client retention and satisfaction, receiving positive feedback during quarterly reviews and external audits.
     """)
+#st.write(\"\"\"
+# - Increased operational efficiency by 25% through process streamlining, automation of reports, and removal of redundant steps in workflow.
+# - Reduced average response and resolution time by 30%, aligning team output with client SLAs and improving service quality.
+# - Successfully managed cross-functional teams of 20+, enhancing collaboration and productivity through structured performance reviews and daily huddles.
+# - Lowered operational costs by INR 5 lakhs annually by implementing resource optimization strategies and reusing existing infrastructure.
+# - Achieved 98% SLA compliance consistently for three quarters by introducing proactive monitoring tools and escalation matrices.
+# - Developed and implemented SOPs and operational manuals, leading to a 20% decrease in process deviations and audit issues.
+# - Spearheaded a Work-From-Home operational transition for over 50 employees, maintaining uninterrupted service delivery during COVID/post-COVID shifts.
+# - Improved employee engagement scores by 35% by launching recognition programs and team-building initiatives focused on accountability and collaboration.
+# - Introduced a daily performance dashboard, reducing manual reporting time by 40% and enabling faster data-driven decisions.
+# - Played a key role in client retention and satisfaction, receiving positive feedback during quarterly reviews and external audits.
+#\"\"\")
+#
+#
+#
+
+#    - Increased operational efficiency by 25% through process streamlining, automation of reports, and removal of redundant steps in workflow.
+#    - Reduced average response and resolution time by 30%, aligning team output with client SLAs and improving service quality.
+#    - Successfully managed cross-functional teams of 20+, enhancing collaboration and productivity through structured performance reviews and daily huddles.
+#    - Lowered operational costs by INR 5 lakhs annually by implementing resource optimization strategies and reusing existing infrastructure.
+#    - Achieved 98% SLA compliance consistently for three quarters by introducing proactive monitoring tools and escalation matrices.
+#    - Developed and implemented SOPs and operational manuals, leading to a 20% decrease in process deviations and audit issues.
+#    - Spearheaded a Work-From-Home operational transition for over 50 employees, maintaining uninterrupted service delivery during COVID/post-COVID shifts.
+#    - Improved employee engagement scores by 35% by launching recognition programs and team-building initiatives focused on accountability and collaboration.
+#    - Introduced a daily performance dashboard, reducing manual reporting time by 40% and enabling faster data-driven decisions.
+#    - Played a key role in client retention and satisfaction, receiving positive feedback during quarterly reviews and external audits.
+#    \"\"\")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # --- CERTIFICATIONS AND ACHIEVEMENTS ---
 # st.header("Certifications")
@@ -299,4 +404,3 @@ with tab5:
 # - Introduced a daily performance dashboard, reducing manual reporting time by 40% and enabling faster data-driven decisions.
 # - Played a key role in client retention and satisfaction, receiving positive feedback during quarterly reviews and external audits.
 # """)
-
